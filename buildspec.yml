@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Installing nginx and learning KUCL 2.2
+      - sudo apt-get update -y
+      - sudo apt-get install nginx -y
+  build:
+    commands:
+      - echo build started on date
+      - cp index.html /var/www/html/
+  post_build:
+    commands:
+      - echo configuring nginx
+artifacts:
+  files:
+    - index.html
